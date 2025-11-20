@@ -1,6 +1,5 @@
 
 import 'package:e_commerce_app/Common/widgets/custome_shape/clipper/custom_rounded_clipper.dart';
-import 'package:e_commerce_app/features/shop/views/home/widgets/primary_header_container.dart';
 import 'package:flutter/material.dart';
 
 
