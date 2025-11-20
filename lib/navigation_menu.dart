@@ -1,4 +1,5 @@
 
+import 'package:e_commerce_app/features/shop/views/home/home.dart';
 import 'package:e_commerce_app/utils/constans/colors.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ class NavigationMenu extends StatelessWidget {
         ),
       ),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
+
     );
   }
 }
@@ -41,7 +43,8 @@ class NavigationController extends GetxController {
 
 
   final screens = [
-    Container(color: Colors.red),       // Home
+    HomeScreen(),
+    // Container(color: Colors.red),    // Home
     Container(color: Colors.blue),      // Store
     Container(color: Colors.green),     // Wishlist
     Container(color: Colors.purple),    // Profile

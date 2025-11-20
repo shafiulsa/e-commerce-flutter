@@ -54,7 +54,7 @@ class SLoginForm extends StatelessWidget {
         ),
         SizedBox(height:SSizes.spaceBtwInputFields),
         //sign in
-        SElevatedButton(onPress: ()=>Get.to(()=>NavigationMenu()),child: Text(SText.signIn)),
+        SElevatedButton(onPress:  () => Get.offAll(() => NavigationMenu()),child: Text(SText.signIn)),
         SizedBox(height:SSizes.spaceBtwItems),
         //Create Account
         SizedBox(
