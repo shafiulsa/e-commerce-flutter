@@ -1,0 +1,52 @@
+
+import 'package:e_commerce_app/Common/widgets/image_text/image_text.dart';
+import 'package:e_commerce_app/utils/constans/colors.dart';
+import 'package:e_commerce_app/utils/constans/images.dart';
+import 'package:e_commerce_app/utils/constans/sizes.dart';
+import 'package:e_commerce_app/utils/constans/text.dart';
+import 'package:flutter/material.dart';
+
+class SHomeCatagories extends StatelessWidget {
+  const SHomeCatagories({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(SSizes.defaultSpace),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // list of items
+          SizedBox(height: SSizes.spaceBtwItems),
+
+          // / Home Categories title
+          Text(
+            SText.popularCategories,
+            style: Theme.of(
+              context,
+            ).textTheme.headlineSmall!.apply(color: SColors.white),
+          ), // Text
+
+          SizedBox(height: SSizes.spaceBtwItems),
+          //Catagory view
+          SizedBox(
+            height: 80,
+            child: ListView.separated(
+              separatorBuilder: (context, index) =>
+                  SizedBox(width: SSizes.spaceBtwItems),
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return SVerticalImageText(
+                  title: "Sport catagpry",
+                  image: SImages.laptopsIcon,
+                  textColor: SColors.white,
+                ); // Column
+              },
+            ), // ListView.builder
+          ), // SizedBox
+        ],
+      ),
+    );
+  }
+}
