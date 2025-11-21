@@ -1,5 +1,7 @@
+import 'package:e_commerce_app/Common/widgets/textfield/serach_bar.dart';
 import 'package:e_commerce_app/features/shop/views/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/views/home/widgets/primary_header_container.dart';
+import 'package:e_commerce_app/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,17 +9,34 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SPrimaryHeaderContainer(
-        child: Container(
-          child: Column(
-            children: [
+      body: Stack(
+        children: [
 
-              //AppBar
-              SHomeAppBar(),
-            ],
+          Container(
+            color: Colors.yellow, // Background color
+            child: SizedBox(
+              height: SSizes.homePrimaryHeaderHeight + 10,
+            ),
           ),
-        ),
-      ),
+
+
+          //Primary Header Container
+          SPrimaryHeaderContainer(
+            child: Container(
+              child: Column(
+                children: [
+
+                  //AppBar
+                  SHomeAppBar(),
+                ],
+              ),
+            ),
+          ),
+          // search bar
+          USearchBar()
+        ],
+      )
+
     );
   }
 }
