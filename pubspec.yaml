@@ -17,7 +17,7 @@ dependencies:
   lottie: ^3.3.2  #Onboarding, splash, loader, success, empty states — সব জায়গায় use করা যায়।
   get: ^4.7.2
   iconsax: ^0.0.8 # for more icon explore flaticon or icons8
-
+  carousel_slider: ^5.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -33,6 +33,7 @@ flutter:
     - assets/logo/
     - assets/images/
     - assets/icons/categories/
+    - assets/banners/
 
   #--------------- LOCAL FONTS ------------------#
   fonts:
