@@ -9,16 +9,15 @@ class SRoundedImage extends StatelessWidget {
     this.width,
     this.height,
     required this.imageUrl,
-    this.applyImageRadius=true,
+    this.applyImageRadius = true,
     this.border,
     this.backgroundColor,
-    this.fit=BoxFit.contain,
+    this.fit = BoxFit.contain,
     this.padding,
-    this.isNetworkImage=false,
+    this.isNetworkImage = false,
     this.onTap,
-    this.borderRadius=SSizes.md,
+    this.borderRadius = SSizes.md,
   });
-
 
   final double? width, height;
   final String imageUrl;
@@ -33,9 +32,22 @@ class SRoundedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(SSizes.md),
-      child: Image(image: AssetImage(imageUrl)), // ClipRRect
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: padding,
+        decoration: BoxDecoration(
+          border: border,
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(SSizes.md),
+          child: Image(image: AssetImage(imageUrl)), // ClipRRect
+        ),
+      ),
     );
   }
 }

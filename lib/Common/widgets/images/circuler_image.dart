@@ -41,7 +41,7 @@ class SCircularImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ?? (dark ? SColors.dark : SColors.light),
         borderRadius: BorderRadius.circular(100),
-        border: Border.all(color: borderColor, width: borderWidth),
+        border: showBorder? Border.all(color: borderColor, width: borderWidth) : null,
       ),
       // BoxDecoration
       child: ClipRRect(

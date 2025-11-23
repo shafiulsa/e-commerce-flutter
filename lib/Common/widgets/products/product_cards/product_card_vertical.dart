@@ -5,10 +5,12 @@ import 'package:e_commerce_app/Common/widgets/images/roundes_image.dart';
 import 'package:e_commerce_app/Common/widgets/text/brand_title_with_verify_icon.dart';
 import 'package:e_commerce_app/Common/widgets/text/product_price_text.dart';
 import 'package:e_commerce_app/Common/widgets/text/product_title_text.dart';
+import 'package:e_commerce_app/features/shop/views/product_details/product_details.dart';
 import 'package:e_commerce_app/utils/constans/colors.dart';
 import 'package:e_commerce_app/utils/constans/images.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/constans/sizes.dart';
 
@@ -19,7 +21,7 @@ class SProductCartVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = SHelperFunction.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: ()=> Get.to(()=>ProductDetailsScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
