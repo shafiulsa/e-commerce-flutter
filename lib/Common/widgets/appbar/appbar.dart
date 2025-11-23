@@ -28,18 +28,36 @@ class SAppBarr extends StatelessWidget implements PreferredSizeWidget {
       padding: EdgeInsets.symmetric(horizontal: SSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
+        // leading: showBackArrow
+        //     ? IconButton(
+        //   onPressed: () => Get.back(),
+        //   icon: Icon(Icons.arrow_back),
+        // )
+        //     : leadingIcon != null
+        //     ? IconButton(
+        //   onPressed: leadingOnPressed,
+        //   icon: Icon(leadingIcon),
+        //   color: dark ? SColors.light : SColors.black,
+        // )
+        //     : null,
         leading: showBackArrow
             ? IconButton(
           onPressed: () => Get.back(),
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(
+            Icons.arrow_back,
+            color: dark ? SColors.light : SColors.dark,   // <-- ADD THIS
+          ),
         )
             : leadingIcon != null
             ? IconButton(
           onPressed: leadingOnPressed,
-          icon: Icon(leadingIcon),
-          color: dark ? SColors.light : SColors.black,
+          icon: Icon(
+            leadingIcon,
+            color: dark ? SColors.light : SColors.dark,
+          ),
         )
             : null,
+
         title: title,
         actions: actions,
       ),

@@ -1,4 +1,6 @@
+import 'package:e_commerce_app/features/personalization/view/edit_profile/edit_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SUserProfileTile extends StatelessWidget {
   const SUserProfileTile({
@@ -11,7 +13,7 @@ class SUserProfileTile extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: Text("Misterious man"),
       subtitle: Text("misteriaas@gmail.com"),
-      trailing: IconButton(onPressed: (){}, icon: Icon(Icons.edit_off_sharp)),
+      trailing: IconButton(onPressed: ()=>Get.to(()=>EditProfileScreen()), icon: Icon(Icons.edit_off_sharp)),
     );
   }
 }
