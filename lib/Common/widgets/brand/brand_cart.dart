@@ -7,13 +7,16 @@ import 'package:e_commerce_app/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SBrandCart extends StatelessWidget {
-  const SBrandCart({super.key});
+  const SBrandCart({super.key, this.showBorder = true});
+
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
     return SRoundedContainer(
       width: SSizes.brandCardWidth,
-      showBorder: true,
+      height: SSizes.brandCardWidth,
+      showBorder: showBorder,
       padding: EdgeInsets.all(SSizes.sm),
       backgroundColor: Colors.transparent,
       child: Row(
