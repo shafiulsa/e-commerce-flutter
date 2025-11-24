@@ -1,5 +1,7 @@
 
+import 'package:e_commerce_app/features/shop/views/cart/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../utils/constans/colors.dart';
 import '../../../../utils/helpers/helper_functions.dart';
@@ -18,7 +20,7 @@ class SCartCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: ()=> Get.to(()=>CartScreen()),
           icon: Icon(Icons.shop),
           color: SColors.light,
         ),

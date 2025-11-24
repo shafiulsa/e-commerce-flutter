@@ -6,8 +6,6 @@ import 'package:e_commerce_app/utils/constans/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../../../Common/widgets/custome_shape/rounded_container.dart';
 import '../../../../utils/constans/sizes.dart';
 
 class AddressScreen extends StatelessWidget {
