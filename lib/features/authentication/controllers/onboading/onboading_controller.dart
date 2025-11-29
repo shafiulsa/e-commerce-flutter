@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/features/authentication/views/login/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 
 class OnBoardingController extends GetxController {
@@ -9,6 +10,7 @@ class OnBoardingController extends GetxController {
   /// Variables
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
+  final storage= GetStorage();
 
   /// Update Current Index when page scroll
   void updatePageIndicator(index) => currentPageIndex.value = index;
@@ -22,6 +24,7 @@ class OnBoardingController extends GetxController {
   /// Update current index & jump to next page
   void nextPage() {
     if(currentPageIndex.value==2){
+
       Get.offAll(()=>LoginScreen());
       return;
     }
@@ -31,6 +34,7 @@ class OnBoardingController extends GetxController {
 
   /// Update current index & jump to the last page
   void skipPage() {
+    storage.write('isFirstTime', false);
     currentPageIndex.value = 2;
     pageController.jumpToPage(2);
   }
