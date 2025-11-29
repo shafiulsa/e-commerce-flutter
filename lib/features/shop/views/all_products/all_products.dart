@@ -23,30 +23,41 @@ class AllProductsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: SPadding.screenPadding,
-          child: Column(
-            children: [
-              
-              //Filter Field
-              DropdownButtonFormField(
-                decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
-                onChanged: (value) {},
-                items: ['Name', 'Lower Price', 'Higher Price', 'Sale', 'Newest']
-                    .map((filter) {
-                      return DropdownMenuItem(
-                        value: filter,
-                        child: Text(filter),
-                      );
-                    })
-                    .toList(),
-              ), // DropdownButtonFormField
-            SizedBox(height: SSizes.spaceBtwSections),
-
-              // Products
-              SGridLayout(itemCount: 10, itemBuilder: (context, index) => SProductCartVertical(),)
-            ],
-          ), // Column
+          child: SSortAbleProducts(), // Column
         ), // Padding
       ), // SingleChildScrollView
     ); // Scaffold
+  }
+}
+
+class SSortAbleProducts extends StatelessWidget {
+  const SSortAbleProducts({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        
+        //Filter Field
+        DropdownButtonFormField(
+          decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
+          onChanged: (value) {},
+          items: ['Name', 'Lower Price', 'Higher Price', 'Sale', 'Newest']
+              .map((filter) {
+                return DropdownMenuItem(
+                  value: filter,
+                  child: Text(filter),
+                );
+              })
+              .toList(),
+        ), // DropdownButtonFormField
+      SizedBox(height: SSizes.spaceBtwSections),
+    
+        // Products
+        SGridLayout(itemCount: 10, itemBuilder: (context, index) => SProductCartVertical(),)
+      ],
+    );
   }
 }

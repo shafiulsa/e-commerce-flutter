@@ -1,10 +1,12 @@
 import 'package:e_commerce_app/Common/widgets/appbar/tab_bar.dart';
 import 'package:e_commerce_app/Common/widgets/brand/brand_cart.dart';
 import 'package:e_commerce_app/Common/widgets/text/section_heading.dart';
+import 'package:e_commerce_app/features/shop/views/brands/all_brands.dart';
 import 'package:e_commerce_app/features/shop/views/store/widets/category_tab.dart';
 import 'package:e_commerce_app/features/shop/views/store/widets/sotre_primary_header.dart';
 import 'package:e_commerce_app/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -40,7 +42,7 @@ class StoreScreen extends StatelessWidget {
                             SSectionHeading(
                               title: "Brand",
                               showActionButton: true,
-                              onPressed: () {},
+                              onPressed: ()=>Get.to(()=>BrandScreen()),
                             ),
 
                             // Brand Card

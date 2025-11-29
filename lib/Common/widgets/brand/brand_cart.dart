@@ -7,48 +7,52 @@ import 'package:e_commerce_app/utils/constans/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SBrandCart extends StatelessWidget {
-  const SBrandCart({super.key, this.showBorder = true});
+  const SBrandCart({super.key, this.showBorder = true, this.onTap});
 
   final bool showBorder;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return SRoundedContainer(
-      width: SSizes.brandCardWidth,
-      height: SSizes.brandCardWidth,
-      showBorder: showBorder,
-      padding: EdgeInsets.all(SSizes.sm),
-      backgroundColor: Colors.transparent,
-      child: Row(
-        children: [
-          //Brand Image
-          Flexible(
-            child: SRoundedImage(
-              imageUrl: SImages.adidasLogo,
-              backgroundColor: Colors.transparent,
+    return GestureDetector(
+      onTap: onTap,
+      child: SRoundedContainer(
+        width: SSizes.brandCardWidth,
+        height: SSizes.brandCardWidth,
+        showBorder: showBorder,
+        padding: EdgeInsets.all(SSizes.sm),
+        backgroundColor: Colors.transparent,
+        child: Row(
+          children: [
+            //Brand Image
+            Flexible(
+              child: SRoundedImage(
+                imageUrl: SImages.adidasLogo,
+                backgroundColor: Colors.transparent,
+              ),
             ),
-          ),
-          SizedBox(width: SSizes.spaceBtwItems / 2),
+            SizedBox(width: SSizes.spaceBtwItems / 2),
 
-          //Brand Name & verify Icon
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SBrandTitleWithVerifyIcon(
-                  title: "Bata ggggggggggggggggggggggg",
-                  brandTextSize: TextSizes.large,
-                ),
-                Text(
-                  "172 productsdddddddddddddddddddddd",
-                  style: Theme.of(context).textTheme.labelMedium,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
+            //Brand Name & verify Icon
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SBrandTitleWithVerifyIcon(
+                    title: "Bata ggggggggggggggggggggggg",
+                    brandTextSize: TextSizes.large,
+                  ),
+                  Text(
+                    "172 productsdddddddddddddddddddddd",
+                    style: Theme.of(context).textTheme.labelMedium,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
